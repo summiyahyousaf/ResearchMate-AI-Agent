@@ -1,4 +1,4 @@
-# 🔬 ResearchMate AI Agent
+#  ResearchMate AI Agent
 
 > **An autonomous AI research assistant that discovers academic papers, ranks relevant research, analyzes findings using RAG, identifies research gaps, generates citations, and produces downloadable research reports.**
 
@@ -8,7 +8,7 @@ Instead of manually searching through papers, comparing sources, extracting info
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 
 * [Overview](#-overview)
 * [Purpose](#-purpose)
@@ -37,7 +37,7 @@ Instead of manually searching through papers, comparing sources, extracting info
 
 ---
 
-# 🧠 Overview
+#  Overview
 
 ResearchMate AI Agent is an autonomous research workflow built with Python and Flask.
 
@@ -71,7 +71,7 @@ The objective is to turn a simple research topic into a structured research repo
 
 ---
 
-# 🎯 Purpose
+#  Purpose
 
 Academic research often requires repetitive tasks such as:
 
@@ -102,7 +102,7 @@ into one research workflow.
 
 ---
 
-# 🚀 Objective
+#  Objective
 
 The main objective of ResearchMate is to build an AI research assistant capable of moving beyond simple question-answering.
 
@@ -121,24 +121,24 @@ Instead of only generating an answer, the system is designed to:
 
 ---
 
-# ✨ Key Features
+#  Key Features
 
-| Feature                    | Description                                                   |
-| -------------------------- | ------------------------------------------------------------- |
-| 🔎 Academic Search         | Searches research papers from academic sources                |
-| 📊 Paper Ranking           | Ranks papers using relevance and citation information         |
-| 🧠 AI Research Analysis    | Uses an LLM to analyze collected research                     |
-| 📚 RAG                     | Retrieves relevant research information from stored documents |
-| 🕳️ Research Gap Detection | Identifies potential gaps and future research directions      |
-| 📝 Report Generation       | Produces a structured research report                         |
-| 📑 Citation Generation     | Generates APA, IEEE and MLA citations                         |
-| 📄 PDF Generation          | Creates a downloadable research report                        |
-| 🌐 Web Interface           | Provides a simple browser-based interface                     |
-| 🐳 Docker Support          | Packages the application into a reproducible environment      |
+| Feature                  | Description                                                   |
+| -------------------------| -----------------------------------------------------------   |
+|  Academic Search         | Searches research papers from academic sources                |
+|  Paper Ranking           | Ranks papers using relevance and citation information         |
+|  AI Research Analysis    | Uses an LLM to analyze collected research                     |
+|  RAG                     | Retrieves relevant research information from stored documents |
+|  Research Gap Detection  | Identifies potential gaps and future research directions      |
+|  Report Generation       | Produces a structured research report                         |
+|  Citation Generation     | Generates APA, IEEE and MLA citations                         |
+|  PDF Generation          | Creates a downloadable research report                        |
+|  Web Interface           | Provides a simple browser-based interface                     |
+|  Docker Support          | Packages the application into a reproducible environment      |
 
 ---
 
-# ⚙️ How ResearchMate Works
+#  How ResearchMate Works
 
 The system follows an agent-based workflow.
 
@@ -182,7 +182,7 @@ The system follows an agent-based workflow.
 
 ---
 
-# 🏗️ Architecture
+#  Architecture
 
 ResearchMate is organized into several layers.
 
@@ -228,7 +228,7 @@ ResearchMate is organized into several layers.
 
 ---
 
-# 📁 Project Structure
+#  Project Structure
 
 ```text
 ResearchMate-AI-Agent/
@@ -291,7 +291,7 @@ ResearchMate-AI-Agent/
 
 ---
 
-# 🤖 Agent Workflow
+#  Agent Workflow
 
 The core workflow is controlled by the agent.
 
@@ -319,7 +319,7 @@ This allows different components to operate on the same research task.
 
 ---
 
-# 🧠 RAG Pipeline
+#  RAG Pipeline
 
 ResearchMate uses Retrieval-Augmented Generation to provide the language model with relevant research information.
 
@@ -351,7 +351,7 @@ This reduces the need to rely only on the language model's internal knowledge.
 
 ---
 
-# 🧩 LLM Integration
+#  LLM Integration
 
 ResearchMate currently integrates with local LLM inference through Ollama.
 
@@ -379,7 +379,7 @@ This allows the research workflow to use an LLM locally during development.
 
 ---
 
-# 🔎 Academic Sources
+#  Academic Sources
 
 ResearchMate currently integrates academic search through:
 
@@ -402,7 +402,7 @@ The search service combines results from the available academic sources.
 
 ---
 
-# 📊 Paper Ranking
+#  Paper Ranking
 
 After collecting papers, ResearchMate ranks them according to research relevance and available citation information.
 
@@ -416,7 +416,7 @@ This separation allows the ranking strategy to be improved independently from th
 
 ---
 
-# 🕳️ Research Gap Identification
+#  Research Gap Identification
 
 ResearchMate analyzes the collected research to identify potential areas where additional research may be valuable.
 
@@ -431,7 +431,7 @@ The gap analysis is generated as part of the research workflow rather than being
 
 ---
 
-# 📚 Citation Generation
+#  Citation Generation
 
 ResearchMate generates citations in multiple academic formats.
 
@@ -457,7 +457,7 @@ MLA
 
 ---
 
-# 📄 PDF Report Generation
+#  PDF Report Generation
 
 After completing the research workflow, ResearchMate generates a PDF report using ReportLab.
 
@@ -480,7 +480,7 @@ Users can download the generated PDF directly from the web interface.
 
 ---
 
-# 🌐 Web Interface
+#  Web Interface
 
 ResearchMate provides a Flask-powered web interface.
 
@@ -516,7 +516,7 @@ The interface allows users to:
 
 ---
 
-# 📦 Installation
+#  Installation
 
 Clone the repository:
 
@@ -550,7 +550,7 @@ pip install -r requirements.txt
 
 ---
 
-# ▶️ Running Locally
+#  Running Locally
 
 Make sure Ollama is installed and running.
 
@@ -586,7 +586,7 @@ http://127.0.0.1:5000
 
 ---
 
-# 🐳 Docker
+#  Docker
 
 ResearchMate includes Docker support for reproducible application environments.
 
@@ -612,7 +612,7 @@ http://localhost:5000
 
 ---
 
-# 🔐 Environment Variables
+#  Environment Variables
 
 Sensitive credentials should not be committed to GitHub.
 
@@ -628,7 +628,7 @@ The `.env` file should remain excluded through `.gitignore`.
 
 ---
 
-# 🔄 Example Workflow
+#  Example Workflow
 
 A typical ResearchMate session looks like:
 
@@ -684,7 +684,7 @@ User downloads report
 
 ---
 
-# 🎯 Project Goals
+#  Project Goals
 
 ResearchMate was developed as a practical exploration of how autonomous AI systems can coordinate multiple tools and services to accomplish a larger task.
 
@@ -710,7 +710,7 @@ Rather than building a simple chatbot, the project explores how multiple compone
 
 ---
 
-# 🔮 Future Improvements
+#  Future Improvements
 
 Planned improvements include:
 
@@ -746,9 +746,9 @@ The system should therefore be treated as a **research assistance tool**, not as
 
 ---
 
-# 👩‍💻 Author
+#  Author
 
-**Summiyah Yousaf**
+**Summiya Yousaf**
 
 BSAI Student | AI & Machine Learning Enthusiast
 
