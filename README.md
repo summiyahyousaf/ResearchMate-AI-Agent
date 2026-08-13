@@ -1,467 +1,431 @@
-#  ResearchMate AI Agent
+# 🔬 ResearchMate AI Agent
 
-> **An autonomous AI research assistant that discovers academic papers, ranks relevant research, analyzes findings using RAG, identifies research gaps, generates citations, and produces downloadable research reports.**
+> An autonomous AI research assistant that discovers academic papers, ranks relevant research, retrieves relevant information using Retrieval-Augmented Generation (RAG), identifies potential research gaps, generates citations, and produces downloadable research reports.
 
-ResearchMate AI Agent is an AI-powered research assistant designed to simplify the process of academic research.
-
-Instead of manually searching through papers, comparing sources, extracting information, identifying research gaps, formatting citations, and preparing a report, ResearchMate coordinates these tasks through an automated research workflow.
+![ResearchMate AI Agent Banner](assets/researchmate-banner.png)
 
 ---
 
-##  Table of Contents
+## Table of Contents
 
-* [Overview](#-overview)
-* [Purpose](#-purpose)
-* [Objective](#-objective)
-* [Key Features](#-key-features)
-* [How ResearchMate Works](#-how-researchmate-works)
-* [Architecture](#-architecture)
-* [Project Structure](#-project-structure)
-* [Research Workflow](#-research-workflow)
-* [RAG Pipeline](#-rag-pipeline)
-* [LLM Integration](#-llm-integration)
-* [Academic Sources](#-academic-sources)
-* [Citation Generation](#-citation-generation)
-* [PDF Report Generation](#-pdf-report-generation)
-* [Web Interface](#-web-interface)
-* [Technology Stack](#-technology-stack)
-* [Installation](#-installation)
-* [Running Locally](#-running-locally)
-* [Docker](#-docker)
-* [Environment Variables](#-environment-variables)
-* [Example Workflow](#-example-workflow)
-* [Project Goals](#-project-goals)
-* [Future Improvements](#-future-improvements)
-* [Limitations](#-limitations)
-* [Author](#-author)
+* [Overview](#overview)
+* [Purpose](#purpose)
+* [Objective](#objective)
+* [Key Features](#key-features)
+* [How ResearchMate Works](#how-researchmate-works)
+* [System Architecture](#system-architecture)
+* [Research Workflow](#research-workflow)
+* [RAG Pipeline](#rag-pipeline)
+* [LLM Integration](#llm-integration)
+* [Academic Sources](#academic-sources)
+* [Paper Ranking](#paper-ranking)
+* [Research Gap Identification](#research-gap-identification)
+* [Citation Generation](#citation-generation)
+* [PDF Report Generation](#pdf-report-generation)
+* [Web Interface](#web-interface)
+* [Screenshots](#screenshots)
+* [Technology Stack](#technology-stack)
+* [Project Structure](#project-structure)
+* [Installation](#installation)
+* [Running Locally](#running-locally)
+* [Docker](#docker)
+* [Environment Variables](#environment-variables)
+* [Example Research Workflow](#example-research-workflow)
+* [Project Goals](#project-goals)
+* [Current Status](#current-status)
+* [Limitations](#limitations)
+* [Future Improvements](#future-improvements)
+* [License](#license)
+* [Author](#author)
 
 ---
 
-#  Overview
+## Overview
 
-ResearchMate AI Agent is an autonomous research workflow built with Python and Flask.
+ResearchMate AI Agent is an AI-powered research assistant designed to automate and simplify the academic research workflow.
 
-A user provides a research topic such as:
+Instead of manually searching for papers, comparing research, retrieving relevant information, identifying research gaps, formatting citations, and preparing reports, ResearchMate coordinates these tasks through a structured research pipeline.
 
-> **"Generative AI in healthcare"**
-
-ResearchMate then coordinates multiple stages of research:
+### ResearchMate Workflow
 
 ```text
 Research Topic
-      ↓
+      |
+      v
 Academic Paper Search
-      ↓
+      |
+      v
 Paper Ranking
-      ↓
+      |
+      v
 RAG Retrieval
-      ↓
+      |
+      v
 Research Analysis
-      ↓
+      |
+      v
 Research Gap Identification
-      ↓
+      |
+      v
 Citation Generation
-      ↓
-Research Report
-      ↓
+      |
+      v
+Structured Research Report
+      |
+      v
 PDF Generation
 ```
 
-The objective is to turn a simple research topic into a structured research report with supporting academic references.
+The project combines AI agent workflows, LLMs, RAG, vector search, academic APIs, ranking, citation generation, Flask, and Docker into a single research workflow.
 
 ---
 
-#  Purpose
+## Purpose
 
-Academic research often requires repetitive tasks such as:
+Academic research often involves repetitive and time-consuming tasks such as:
 
-* finding relevant papers
-* comparing research
-* reading abstracts
-* identifying important findings
-* finding research gaps
-* formatting citations
-* organizing information into a report
+* Finding relevant research papers
+* Comparing different sources
+* Extracting useful information
+* Identifying important findings
+* Discovering potential research gaps
+* Formatting citations
+* Organizing research into a structured report
 
-ResearchMate was created to explore how an AI agent can coordinate these tasks automatically.
+ResearchMate was created to explore how an AI-powered system can coordinate these tasks into one automated workflow.
 
-The project combines:
-
-* AI agents
-* LLMs
-* Retrieval-Augmented Generation (RAG)
-* vector search
-* academic APIs
-* ranking
-* citation generation
-* PDF generation
-* Flask
-* Docker
-
-into one research workflow.
+The project focuses on building a research assistant that goes beyond simple question answering by combining multiple research and AI components.
 
 ---
 
-#  Objective
+## Objective
 
-The main objective of ResearchMate is to build an AI research assistant capable of moving beyond simple question-answering.
+The primary objective of ResearchMate is to build an AI research assistant capable of coordinating multiple research tasks.
 
-Instead of only generating an answer, the system is designed to:
+The system is designed to:
 
 1. Search academic sources.
 2. Collect relevant research papers.
-3. Rank papers based on relevance and citation information.
+3. Rank papers using relevance and available citation information.
 4. Store research information for retrieval.
-5. Retrieve relevant information using RAG.
-6. Generate research analysis.
+5. Retrieve relevant context using RAG.
+6. Generate research analysis using an LLM.
 7. Identify potential research gaps.
-8. Generate citations in multiple formats.
+8. Generate academic citations.
 9. Produce a structured research report.
 10. Generate a downloadable PDF.
 
 ---
 
-#  Key Features
+## Key Features
 
-| Feature                  | Description                                                   |
-| -------------------------| -----------------------------------------------------------   |
-|  Academic Search         | Searches research papers from academic sources                |
-|  Paper Ranking           | Ranks papers using relevance and citation information         |
-|  AI Research Analysis    | Uses an LLM to analyze collected research                     |
-|  RAG                     | Retrieves relevant research information from stored documents |
-|  Research Gap Detection  | Identifies potential gaps and future research directions      |
-|  Report Generation       | Produces a structured research report                         |
-|  Citation Generation     | Generates APA, IEEE and MLA citations                         |
-|  PDF Generation          | Creates a downloadable research report                        |
-|  Web Interface           | Provides a simple browser-based interface                     |
-|  Docker Support          | Packages the application into a reproducible environment      |
+| Feature                        | Description                                                |
+| ------------------------------ | ---------------------------------------------------------- |
+| Academic Search                | Searches research papers from integrated academic sources  |
+| Paper Ranking                  | Ranks papers using relevance and citation information      |
+| AI Research Analysis           | Uses an LLM to analyze collected research                  |
+| Retrieval-Augmented Generation | Retrieves relevant research context before generation      |
+| Research Gap Detection         | Identifies potential gaps and future research directions   |
+| Report Generation              | Produces structured research reports                       |
+| Citation Generation            | Generates APA, IEEE, and MLA citations                     |
+| PDF Generation                 | Creates downloadable research reports                      |
+| Web Interface                  | Provides a browser-based research interface                |
+| Docker Support                 | Containerizes the application for reproducible execution   |
+| Modular Architecture           | Separates agents, services, tools, RAG, and LLM components |
 
 ---
 
-#  How ResearchMate Works
+## How ResearchMate Works
 
-The system follows an agent-based workflow.
+ResearchMate uses a state-driven workflow to coordinate the research process.
 
 ```text
-                     ┌──────────────────┐
-                     │   Research Topic │
-                     └────────┬─────────┘
-                              ↓
-                     ┌──────────────────┐
-                     │     Planner      │
-                     └────────┬─────────┘
-                              ↓
-                     ┌──────────────────┐
-                     │  Search Papers   │
-                     └────────┬─────────┘
-                              ↓
-                     ┌──────────────────┐
-                     │ Rank Papers      │
-                     └────────┬─────────┘
-                              ↓
-                     ┌──────────────────┐
-                     │   RAG Retrieval  │
-                     └────────┬─────────┘
-                              ↓
-                     ┌──────────────────┐
-                     │ Generate Report  │
-                     └────────┬─────────┘
-                              ↓
-                     ┌──────────────────┐
-                     │ Research Gaps    │
-                     └────────┬─────────┘
-                              ↓
-                     ┌──────────────────┐
-                     │    Citations     │
-                     └────────┬─────────┘
-                              ↓
-                     ┌──────────────────┐
-                     │    PDF Report    │
-                     └──────────────────┘
+                    +---------------------+
+                    |   Research Topic    |
+                    +----------+----------+
+                               |
+                               v
+                    +---------------------+
+                    |      Planner        |
+                    +----------+----------+
+                               |
+                               v
+                    +---------------------+
+                    |   Search Papers     |
+                    +----------+----------+
+                               |
+                               v
+                    +---------------------+
+                    |    Rank Papers      |
+                    +----------+----------+
+                               |
+                               v
+                    +---------------------+
+                    |   RAG Retrieval     |
+                    +----------+----------+
+                               |
+                               v
+                    +---------------------+
+                    |  Generate Report    |
+                    +----------+----------+
+                               |
+                               v
+                    +---------------------+
+                    |   Research Gaps     |
+                    +----------+----------+
+                               |
+                               v
+                    +---------------------+
+                    |     Citations       |
+                    +----------+----------+
+                               |
+                               v
+                    +---------------------+
+                    |     PDF Report      |
+                    +---------------------+
+```
+
+The planner checks the current research state and determines which stage should happen next.
+
+---
+
+## System Architecture
+
+```text
+                         +----------------------+
+                         |     Web Interface    |
+                         |      HTML/CSS/JS     |
+                         +----------+-----------+
+                                    |
+                                    v
+                         +----------------------+
+                         |      Flask API       |
+                         |    flask_app.py      |
+                         +----------+-----------+
+                                    |
+                                    v
+                         +----------------------+
+                         |    Agent Workflow    |
+                         | Planner + State      |
+                         | Memory + Workflow    |
+                         +----------+-----------+
+                                    |
+              +---------------------+---------------------+
+              |                     |                     |
+              v                     v                     v
+       Search Services        Ranking Service        RAG System
+              |                     |                     |
+              v                     v                     v
+     arXiv / Semantic       Relevance +            Embeddings
+        Scholar              Citations             FAISS
+              |                     |                     |
+              +---------------------+---------------------+
+                                    |
+                                    v
+                         +----------------------+
+                         |    LLM Processing    |
+                         |       Ollama         |
+                         +----------+-----------+
+                                    |
+                    +---------------+---------------+
+                    |                               |
+                    v                               v
+             Research Report                  Research Gaps
+                    |                               |
+                    +---------------+---------------+
+                                    |
+                                    v
+                         +----------------------+
+                         | Citations + PDF       |
+                         +----------------------+
 ```
 
 ---
 
-#  Architecture
+## Research Workflow
 
-ResearchMate is organized into several layers.
-
-```text
-                    ┌───────────────────────┐
-                    │      Web Interface    │
-                    │       HTML + CSS      │
-                    └───────────┬───────────┘
-                                │
-                                ↓
-                    ┌───────────────────────┐
-                    │        Flask API      │
-                    │      flask_app.py     │
-                    └───────────┬───────────┘
-                                │
-                                ↓
-                    ┌───────────────────────┐
-                    │    Agent Workflow     │
-                    │ planner + state       │
-                    │ memory + reasoning    │
-                    └───────────┬───────────┘
-                                │
-              ┌─────────────────┼─────────────────┐
-              ↓                 ↓                 ↓
-        Search Services     Ranking          RAG System
-              │                 │                 │
-              ↓                 ↓                 ↓
-       Academic APIs      Relevance +       Embeddings
-       arXiv/S2           citations         Vector Store
-              │                 │                 │
-              └─────────────────┼─────────────────┘
-                                ↓
-                         LLM Processing
-                                ↓
-                    ┌───────────────────────┐
-                    │ Report + Gap Analysis │
-                    └───────────┬───────────┘
-                                ↓
-                    ┌───────────────────────┐
-                    │ Citations + PDF       │
-                    └───────────────────────┘
-```
-
----
-
-#  Project Structure
+A typical research request follows these stages:
 
 ```text
-ResearchMate-AI-Agent/
-│
-├── agent/
-│   ├── __init__.py
-│   ├── memory.py
-│   ├── planner.py
-│   ├── prompts.py
-│   ├── reasoning.py
-│   ├── state.py
-│   └── workflow.py
-│
-├── assets/
-│   └── styles.css
-│
-├── frontend/
-│   ├── __init__.py
-│   └── index.html
-│
-├── llm/
-│   ├── __init__.py
-│   ├── huggingface.py
-│   └── ollama.py
-│
-├── models/
-│   ├── citation.py
-│   ├── paper.py
-│   └── report.py
-│
-├── rag/
-│   ├── __init__.py
-│   ├── chunking.py
-│   ├── embeddings.py
-│   ├── retriever.py
-│   └── vector_store.py
-│
-├── services/
-│   ├── citation_service.py
-│   ├── gap_service.py
-│   ├── pdf_service.py
-│   ├── ranking_service.py
-│   ├── report_service.py
-│   ├── search_service.py
-│   └── summary_service.py
-│
-├── tools/
-│   ├── __init__.py
-│   ├── arxiv_tool.py
-│   └── semantic_scholar_tool.py
-│
-├── app.py
-├── flask_app.py
-├── requirements.txt
-├── Dockerfile
-├── .gitignore
-├── README.md
-└── test.py
-```
-
----
-
-#  Agent Workflow
-
-The core workflow is controlled by the agent.
-
-The planner determines what action should happen next.
-
-Typical actions include:
-
-```text
-search
-   ↓
-rank
-   ↓
-generate_report
-   ↓
-find_research_gaps
-   ↓
-generate_citations
-   ↓
-create_pdf
+1. Search
+   |
+2. Rank
+   |
+3. Retrieve relevant research context
+   |
+4. Generate research report
+   |
+5. Identify research gaps
+   |
+6. Generate citations
+   |
+7. Create PDF
+   |
+8. Complete
 ```
 
 The workflow maintains the research state throughout the process.
 
-This allows different components to operate on the same research task.
-
 ---
 
-#  RAG Pipeline
+## RAG Pipeline
 
-ResearchMate uses Retrieval-Augmented Generation to provide the language model with relevant research information.
-
-The pipeline is:
+ResearchMate uses Retrieval-Augmented Generation to provide the LLM with relevant research information.
 
 ```text
 Research Papers
-      ↓
+      |
+      v
 Paper Abstracts
-      ↓
+      |
+      v
 Document Chunks
-      ↓
+      |
+      v
 Embeddings
-      ↓
-Vector Store
-      ↓
+      |
+      v
+FAISS Vector Store
+      |
+      v
 Similarity Retrieval
-      ↓
+      |
+      v
 Relevant Context
-      ↓
+      |
+      v
 LLM
-      ↓
+      |
+      v
 Research Analysis
 ```
 
-The current implementation uses a vector retrieval system to store and retrieve research information.
+The retrieval layer provides relevant information from collected research to the generation process.
 
-This reduces the need to rely only on the language model's internal knowledge.
+This helps the system ground its generated analysis in the research material retrieved during the workflow.
 
 ---
 
-#  LLM Integration
+## LLM Integration
 
-ResearchMate currently integrates with local LLM inference through Ollama.
+ResearchMate currently uses Ollama for local LLM inference during development and local Docker execution.
 
-The current model configuration is:
+Current model:
 
 ```text
 llama3.2:1b
 ```
 
-The application communicates with Ollama through its local API.
+The communication flow is:
 
 ```text
 ResearchMate
-      ↓
+      |
+      v
 HTTP Request
-      ↓
+      |
+      v
 Ollama API
-      ↓
-llama3.2:1b
-      ↓
+      |
+      v
+Llama 3.2:1b
+      |
+      v
 Generated Response
 ```
 
-This allows the research workflow to use an LLM locally during development.
+This allows ResearchMate to use a locally running LLM without requiring the model itself to be packaged inside the application container.
+
+### Production Deployment
+
+Public deployment is not currently enabled.
+
+The current Docker setup depends on Ollama running on the local host machine. A future production deployment will require cloud-accessible LLM infrastructure.
 
 ---
 
-#  Academic Sources
-
-ResearchMate currently integrates academic search through:
+## Academic Sources
 
 ### arXiv
 
-Used for discovering research papers available through the arXiv API.
+ResearchMate uses arXiv to discover academic research papers and retrieve research metadata.
 
 ### Semantic Scholar
 
-Used for academic paper search and metadata such as:
+ResearchMate also uses Semantic Scholar for academic search and metadata including:
 
-* title
-* authors
-* abstract
-* publication year
-* citation count
-* paper URL
+* Title
+* Authors
+* Abstract
+* Publication year
+* Citation count
+* Paper URL
 
-The search service combines results from the available academic sources.
+The search service combines available results from the integrated academic sources.
 
 ---
 
-#  Paper Ranking
+## Paper Ranking
 
-After collecting papers, ResearchMate ranks them according to research relevance and available citation information.
+After collecting research papers, ResearchMate processes and ranks them using available research relevance and citation information.
 
-The ranking layer is separated into:
+The ranking logic is separated into:
 
 ```text
 services/ranking_service.py
 ```
 
-This separation allows the ranking strategy to be improved independently from the search system.
+This modular design allows the ranking strategy to be improved independently from the search system.
 
 ---
 
-#  Research Gap Identification
+## Research Gap Identification
 
-ResearchMate analyzes the collected research to identify potential areas where additional research may be valuable.
+ResearchMate analyzes collected research to identify potential areas that may require further investigation.
 
-The generated gap analysis can include:
+Potential outputs include:
 
-* underexplored areas
-* limitations
-* missing perspectives
-* potential future directions
+* Underexplored research areas
+* Limitations in existing work
+* Missing perspectives
+* Potential future research directions
 
-The gap analysis is generated as part of the research workflow rather than being a separate manual step.
+Research-gap analysis is integrated into the overall research workflow.
 
 ---
 
-#  Citation Generation
+## Citation Generation
 
-ResearchMate generates citations in multiple academic formats.
+ResearchMate generates citations for collected research papers.
 
-Currently supported formats include:
+Currently supported citation formats include:
 
-* **APA**
-* **IEEE**
-* **MLA**
-
-Example:
+* APA
+* IEEE
+* MLA
 
 ```text
 Research Paper
-      ↓
-Metadata
-      ↓
+      |
+      v
+Paper Metadata
+      |
+      v
 Citation Service
-      ↓
-APA
-IEEE
-MLA
+      |
+      +--------+--------+
+      |        |        |
+      v        v        v
+     APA     IEEE      MLA
 ```
 
 ---
 
-#  PDF Report Generation
+## PDF Report Generation
 
-After completing the research workflow, ResearchMate generates a PDF report using ReportLab.
+ResearchMate generates downloadable research reports using ReportLab.
 
-The generated report can contain:
+A generated report can contain:
 
 * Research topic
 * Executive summary
@@ -476,55 +440,169 @@ The generated report can contain:
 * IEEE citations
 * MLA citations
 
-Users can download the generated PDF directly from the web interface.
+The generated PDF can be downloaded through the web interface.
 
 ---
 
-#  Web Interface
+## Web Interface
 
-ResearchMate provides a Flask-powered web interface.
-
-The interface allows users to:
+The Flask-powered interface allows users to:
 
 1. Enter a research topic.
 2. Start the research workflow.
-3. Wait while ResearchMate processes the topic.
+3. Wait while ResearchMate processes the research.
 4. View the generated report.
 5. Review research gaps.
-6. View citations.
+6. Review citations.
 7. Download the generated PDF.
 
 ---
 
-# 🛠️ Technology Stack
+## Screenshots
 
-| Category         | Technology                      |
-| ---------------- | ------------------------------- |
-| Language         | Python                          |
-| Backend          | Flask                           |
-| LLM Runtime      | Ollama                          |
-| LLM              | Llama 3.2 1B                    |
-| RAG              | Custom retrieval pipeline       |
-| Vector Search    | FAISS                           |
-| Embeddings       | Python-based embedding pipeline |
-| Academic Search  | arXiv                           |
-| Academic Search  | Semantic Scholar                |
-| PDF Generation   | ReportLab                       |
-| Frontend         | HTML, CSS, JavaScript           |
-| Containerization | Docker                          |
-| Version Control  | Git + GitHub                    |
+Screenshots will be added here to demonstrate the ResearchMate interface and generated results.
+
+### ResearchMate Interface
+
+```text
+<!-- Add screenshot here -->
+```
+
+![ResearchMate Interface](assets/screenshots/interface.png)
+
+### Research Input
+
+```text
+<!-- Add screenshot here -->
+```
+
+![Research Input](assets/screenshots/research-input.png)
+
+### Generated Research Report
+
+```text
+<!-- Add screenshot here -->
+```
+
+![Generated Research Report](assets/screenshots/research-report.png)
+
+### Research Gaps
+
+```text
+<!-- Add screenshot here -->
+```
+
+![Research Gaps](assets/screenshots/research-gaps.png)
+
+### Citations
+
+```text
+<!-- Add screenshot here -->
+```
+
+![Citations](assets/screenshots/citations.png)
+
+### Generated PDF
+
+```text
+<!-- Add screenshot here -->
+```
+
+![Generated PDF](assets/screenshots/generated-pdf.png)
 
 ---
 
-#  Installation
+## Technology Stack
+
+| Category             | Technology            |
+| -------------------- | --------------------- |
+| Programming Language | Python                |
+| Backend              | Flask                 |
+| LLM Runtime          | Ollama                |
+| LLM                  | Llama 3.2 1B          |
+| RAG                  | Custom RAG Pipeline   |
+| Vector Search        | FAISS                 |
+| Embeddings           | Hugging Face Hub      |
+| Academic Search      | arXiv                 |
+| Academic Search      | Semantic Scholar      |
+| PDF Generation       | ReportLab             |
+| Frontend             | HTML, CSS, JavaScript |
+| Containerization     | Docker                |
+| Version Control      | Git and GitHub        |
+
+---
+
+## Project Structure
+
+```text
+ResearchMate-AI-Agent/
+|
+├── agent/
+│   ├── __init__.py
+│   ├── memory.py
+│   ├── planner.py
+│   ├── prompts.py
+│   ├── reasoning.py
+│   ├── state.py
+│   └── workflow.py
+|
+├── assets/
+│   └── styles.css
+|
+├── frontend/
+│   ├── __init__.py
+│   └── index.html
+|
+├── llm/
+│   ├── __init__.py
+│   ├── huggingface.py
+│   └── ollama.py
+|
+├── models/
+│   ├── citation.py
+│   ├── paper.py
+│   └── report.py
+|
+├── rag/
+│   ├── __init__.py
+│   ├── chunking.py
+│   ├── embeddings.py
+│   ├── retriever.py
+│   └── vector_store.py
+|
+├── services/
+│   ├── citation_service.py
+│   ├── gap_service.py
+│   ├── pdf_service.py
+│   ├── ranking_service.py
+│   ├── report_service.py
+│   ├── search_service.py
+│   └── summary_service.py
+|
+├── tools/
+│   ├── __init__.py
+│   ├── arxiv_tool.py
+│   └── semantic_scholar_tool.py
+|
+├── app.py
+├── flask_app.py
+├── requirements.txt
+├── Dockerfile
+├── .gitignore
+└── README.md
+```
+
+---
+
+## Installation
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/summiyahyousaf/ResearchMate-AI-Agent.git
+git clone <repository-url>
 ```
 
-Move into the project:
+Move into the project directory:
 
 ```bash
 cd ResearchMate-AI-Agent
@@ -536,49 +614,55 @@ Create a virtual environment:
 python -m venv venv
 ```
 
-Activate it on Windows:
+Activate the virtual environment on Windows:
 
 ```powershell
 venv\Scripts\Activate.ps1
 ```
 
-Install dependencies:
+Install the required dependencies:
 
-```bash
+```powershell
 pip install -r requirements.txt
 ```
 
 ---
 
-#  Running Locally
+## Running Locally
 
 Make sure Ollama is installed and running.
 
-Verify Ollama:
+Check the Ollama installation:
 
-```bash
+```powershell
 ollama --version
 ```
 
-Verify that Ollama is running:
+Check whether the Ollama server is running:
 
-```bash
+```powershell
 curl http://localhost:11434
+```
+
+Check available models:
+
+```powershell
+ollama list
 ```
 
 Make sure the required model is available:
 
-```bash
-ollama list
+```text
+llama3.2:1b
 ```
 
-Then run:
+Start ResearchMate:
 
-```bash
+```powershell
 python flask_app.py
 ```
 
-Open:
+Open the application in your browser:
 
 ```text
 http://127.0.0.1:5000
@@ -586,200 +670,306 @@ http://127.0.0.1:5000
 
 ---
 
-#  Docker
+## Docker
 
-ResearchMate includes Docker support for reproducible application environments.
+ResearchMate has been successfully Dockerized and tested locally.
 
-Build the Docker image:
+### Build the Docker Image
 
-```bash
+```powershell
 docker build -t researchmate-ai .
 ```
 
-Run the container:
+This creates the Docker image:
 
-```bash
+```text
+researchmate-ai:latest
+```
+
+### Run the Docker Container
+
+```powershell
 docker run -p 5000:5000 researchmate-ai
 ```
 
-Then access the application at:
+The port mapping:
+
+```text
+5000:5000
+```
+
+maps port `5000` inside the Docker container to port `5000` on the host machine.
+
+The application can then be accessed at:
 
 ```text
 http://localhost:5000
 ```
 
-> **Note:** The current local development architecture uses Ollama running outside the Flask application. A production deployment therefore requires an appropriate LLM hosting strategy rather than assuming the cloud container can access the developer's local Ollama instance.
+### Local Docker Architecture
+
+```text
+Windows Host
+|
++-- Docker
+|     |
+|     +-- ResearchMate Container
+|             |
+|             +-- Flask Application
+|
++-- Ollama
+      |
+      +-- Llama 3.2:1b
+```
+
+The Dockerized ResearchMate application communicates with the locally running Ollama service through the Docker host.
+
+### Docker Status
+
+```text
+Dockerfile                  Completed
+Docker Image                Completed
+Docker Container            Completed
+Local Flask Application     Completed
+Ollama Integration          Completed
+Public Cloud Deployment     Planned
+```
 
 ---
 
-#  Environment Variables
+## Environment Variables
 
-Sensitive credentials should not be committed to GitHub.
+Sensitive API credentials should never be committed to GitHub.
 
-Store secrets in a local `.env` file when required.
+Store required secrets in a local `.env` file.
 
 Example:
 
 ```env
 SEMANTIC_SCHOLAR_API_KEY=your_api_key
+HUGGINGFACE_API_KEY=your_api_key
 ```
 
-The `.env` file should remain excluded through `.gitignore`.
+Make sure `.env` is included in `.gitignore`.
+
+Never commit real API keys to the repository.
 
 ---
 
-#  Example Workflow
+## Example Research Workflow
 
-A typical ResearchMate session looks like:
+Example input:
 
 ```text
-User enters:
-
-"Generative AI in healthcare"
-
-             ↓
-
-ResearchMate searches academic sources
-
-             ↓
-
-Relevant papers collected
-
-             ↓
-
-Papers ranked
-
-             ↓
-
-Research abstracts added to retrieval system
-
-             ↓
-
-Relevant information retrieved
-
-             ↓
-
-LLM analyzes research
-
-             ↓
-
-Research gaps identified
-
-             ↓
-
-Citations generated
-
-             ↓
-
-Structured report generated
-
-             ↓
-
-PDF created
-
-             ↓
-
-User downloads report
+Generative AI in healthcare
 ```
+
+ResearchMate processes the request through:
+
+```text
+User Input
+    |
+    v
+Academic Search
+    |
+    v
+Relevant Papers
+    |
+    v
+Paper Ranking
+    |
+    v
+RAG Retrieval
+    |
+    v
+LLM Research Analysis
+    |
+    v
+Research Gap Detection
+    |
+    v
+Citation Generation
+    |
+    v
+Structured Report
+    |
+    v
+PDF Generation
+```
+
+The user receives structured research output together with citations and a downloadable report.
 
 ---
 
-#  Project Goals
+## Project Goals
 
-ResearchMate was developed as a practical exploration of how autonomous AI systems can coordinate multiple tools and services to accomplish a larger task.
+ResearchMate was developed as a practical exploration of how AI systems can coordinate multiple tools and services to accomplish a larger research task.
 
-The project focuses on understanding and implementing:
+The project focuses on implementing and understanding:
 
-* AI agents
-* agent planning
-* state management
-* memory
+* AI agent workflows
+* Agent planning
+* State management
+* Memory
 * LLM integration
-* RAG
-* vector databases
-* academic APIs
-* information retrieval
-* ranking
-* report generation
-* citation generation
+* Retrieval-Augmented Generation
+* Embeddings
+* Vector search
+* Academic APIs
+* Information retrieval
+* Paper ranking
+* Research analysis
+* Research-gap detection
+* Citation generation
+* Report generation
 * PDF generation
 * Flask APIs
 * Docker
 
-Rather than building a simple chatbot, the project explores how multiple components can work together as an autonomous research workflow.
+Rather than building another simple chatbot, ResearchMate explores how multiple AI and software components can work together as an end-to-end research assistant.
 
 ---
 
-#  Future Improvements
+## Current Status
+
+### Completed
+
+* [x] Academic paper search
+* [x] arXiv integration
+* [x] Semantic Scholar integration
+* [x] Paper ranking
+* [x] Research state management
+* [x] Agent workflow
+* [x] Memory component
+* [x] RAG pipeline
+* [x] Vector retrieval
+* [x] LLM integration with Ollama
+* [x] Research report generation
+* [x] Research gap identification
+* [x] Citation generation
+* [x] PDF generation
+* [x] Flask web interface
+* [x] Dockerfile
+* [x] Docker image
+* [x] Local Docker container execution
+* [x] Git and GitHub integration
+
+### Planned
+
+* [ ] Public cloud deployment
+* [ ] Production LLM infrastructure
+* [ ] Additional academic databases
+* [ ] PubMed integration
+* [ ] Improved paper ranking
+* [ ] Full-paper ingestion
+* [ ] Advanced RAG
+* [ ] Research history
+* [ ] Multi-topic research
+* [ ] Authentication
+* [ ] Custom domain
+* [ ] Improved observability
+* [ ] More advanced agent planning
+
+---
+
+## Limitations
+
+ResearchMate is currently an actively developing research-assistance system.
+
+AI-generated research analysis may contain:
+
+* Incorrect interpretations
+* Missing information
+* Incomplete conclusions
+* Unsupported statements
+
+ResearchMate should therefore be used as a research assistance tool, not as a replacement for reading and evaluating the original academic sources.
+
+Academic papers and generated results should always be reviewed before being used in academic or professional work.
+
+---
+
+## Future Improvements
+
+The long-term goal is to evolve ResearchMate from a locally running research assistant into a more autonomous and production-ready research system.
 
 Planned improvements include:
 
-* [ ] More academic databases
-* [ ] PubMed integration
-* [ ] Google Scholar-compatible research discovery
-* [ ] Improved paper ranking
-* [ ] Better semantic similarity
-* [ ] Full paper PDF ingestion
-* [ ] More advanced RAG
-* [ ] Improved research-gap detection
-* [ ] User research history
-* [ ] Multi-topic research
-* [ ] Research comparison mode
-* [ ] Authentication
-* [ ] Cloud-based LLM infrastructure
-* [ ] Production deployment
-* [ ] Custom domain
-* [ ] More advanced agent planning
-* [ ] Improved observability and logging
+* Cloud deployment
+* Production LLM infrastructure
+* Additional academic databases
+* PubMed integration
+* Improved retrieval
+* Full-paper processing
+* Better ranking algorithms
+* More advanced agent planning
+* Persistent research history
+* Authentication
+* User accounts
+* Scalable infrastructure
+* Custom domain
+* Monitoring and logging
+
+The intended progression is:
+
+```text
+Local Research Assistant
+        |
+        v
+Dockerized Application
+        |
+        v
+Cloud LLM Infrastructure
+        |
+        v
+Public Deployment
+        |
+        v
+Scalable AI Research Platform
+```
 
 ---
 
-# Limitations
+## License
 
-ResearchMate is currently a project under active development.
-
-Research results should be reviewed by the user before being used in academic or professional work.
-
-AI-generated research analysis can contain errors, incomplete interpretations, or unsupported conclusions.
-
-The system should therefore be treated as a **research assistance tool**, not as a replacement for reading and evaluating the original academic sources.
+No open-source license has currently been added to the project.
 
 ---
 
-#  Author
+## Author
 
 **Summiya Yousaf**
 
-BSAI Student | AI & Machine Learning Enthusiast
+BSAI Student | AI and Machine Learning Enthusiast
 
-GitHub:
-
-https://github.com/summiyahyousaf
+GitHub: `summiyahyousaf`
 
 ---
 
-#  Project Status
+## Project Status
 
-**ResearchMate AI Agent is actively under development.**
+ResearchMate AI Agent is actively under development.
 
 The current version demonstrates an end-to-end research workflow:
 
 ```text
-Search
-  ↓
-Rank
-  ↓
-Retrieve
-  ↓
-Analyze
-  ↓
-Find Gaps
-  ↓
-Citations
-  ↓
-Report
-  ↓
+SEARCH
+  |
+RANK
+  |
+RETRIEVE
+  |
+ANALYZE
+  |
+FIND GAPS
+  |
+CITATIONS
+  |
+REPORT
+  |
 PDF
 ```
 
-The project will continue evolving toward a more autonomous, scalable, and production-ready AI research system.
+The project currently runs locally and has been successfully containerized using Docker.
+
+Public cloud deployment is planned for a future stage after further development and testing.
