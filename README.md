@@ -468,7 +468,7 @@ Screenshots will be added here to demonstrate the ResearchMate interface and gen
 <!-- Add screenshot here -->
 ```
 
-![ResearchMate Interface](assets/screenshots/interface.png)
+![ResearchMate Interface](screenshots/interface.png)
 
 ### Research Input
 
@@ -476,7 +476,7 @@ Screenshots will be added here to demonstrate the ResearchMate interface and gen
 <!-- Add screenshot here -->
 ```
 
-![Research Input](assets/screenshots/research-input.png)
+![Research Input](screenshots/search.png)
 
 ### Generated Research Report
 
