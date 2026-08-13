@@ -930,22 +930,6 @@ Scalable AI Research Platform
 
 ---
 
-## License
-
-No open-source license has currently been added to the project.
-
----
-
-## Author
-
-**Summiya Yousaf**
-
-BSAI Student | AI and Machine Learning Enthusiast
-
-GitHub: `summiyahyousaf`
-
----
-
 ## Project Status
 
 ResearchMate AI Agent is actively under development.
@@ -973,3 +957,32 @@ PDF
 The project currently runs locally and has been successfully containerized using Docker.
 
 Public cloud deployment is planned for a future stage after further development and testing.
+
+##  Developer
+
+**Summiya Yousaf**
+
+Bachelor of Science in Artificial Intelligence
+
+Air University Islamabad
+
+### Interests
+
+- Artificial Intelligence
+- Machine Learning
+- Healthcare AI
+- NLP
+- Computer Vision
+
+### 🔗 Connect with me
+
+- GitHub: https://github.com/summiyahyousaf
+- LinkedIn: https://www.linkedin.com/in/summiya-yousaf-24411534a/
+  
+ ##  License
+
+This project is licensed under the MIT License.
+
+
+⭐ If you found this project interesting, consider giving it a star!
+
