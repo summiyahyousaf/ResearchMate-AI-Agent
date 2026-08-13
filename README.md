@@ -139,12 +139,6 @@ The system is designed to:
 
 <img src="screenshots/work.png" width="400">
 
----
-
-## System Architecture
-
-<img src="screenshots/architecture.png" width="600">
-
 ## Research Workflow
 
 A typical research request follows these stages:
@@ -170,6 +164,11 @@ A typical research request follows these stages:
 The workflow maintains the research state throughout the process.
 
 ---
+
+## System Architecture
+
+<img src="screenshots/architecture.png" width="600">
+
 
 ## RAG Pipeline
 
@@ -704,107 +703,32 @@ The project focuses on implementing and understanding:
 
 Rather than building another simple chatbot, ResearchMate explores how multiple AI and software components can work together as an end-to-end research assistant.
 
----
-
-## Current Status
-
-### Completed
-
-* [x] Academic paper search
-* [x] arXiv integration
-* [x] Semantic Scholar integration
-* [x] Paper ranking
-* [x] Research state management
-* [x] Agent workflow
-* [x] Memory component
-* [x] RAG pipeline
-* [x] Vector retrieval
-* [x] LLM integration with Ollama
-* [x] Research report generation
-* [x] Research gap identification
-* [x] Citation generation
-* [x] PDF generation
-* [x] Flask web interface
-* [x] Dockerfile
-* [x] Docker image
-* [x] Local Docker container execution
-* [x] Git and GitHub integration
-
-### Planned
-
-* [ ] Public cloud deployment
-* [ ] Production LLM infrastructure
-* [ ] Additional academic databases
-* [ ] PubMed integration
-* [ ] Improved paper ranking
-* [ ] Full-paper ingestion
-* [ ] Advanced RAG
-* [ ] Research history
-* [ ] Multi-topic research
-* [ ] Authentication
-* [ ] Custom domain
-* [ ] Improved observability
-* [ ] More advanced agent planning
 
 ---
 
 ## Limitations
 
-ResearchMate is currently an actively developing research-assistance system.
-
-AI-generated research analysis may contain:
-
-* Incorrect interpretations
-* Missing information
-* Incomplete conclusions
-* Unsupported statements
-
-ResearchMate should therefore be used as a research assistance tool, not as a replacement for reading and evaluating the original academic sources.
-
-Academic papers and generated results should always be reviewed before being used in academic or professional work.
+-Research generation can take several minutes depending on the number of papers and LLM processing time.
+-The current Docker setup relies on Ollama running on the host machine.
+-The current deployment is intended for local development and demonstration.
+-Research results depend on the availability, response time, and limits of external academic APIs.
+-Public deployment requires a cloud-based LLM hosting solution.
 
 ---
 
 ## Future Improvements
 
-The long-term goal is to evolve ResearchMate from a locally running research assistant into a more autonomous and production-ready research system.
 
-Planned improvements include:
-
-* Cloud deployment
-* Production LLM infrastructure
-* Additional academic databases
-* PubMed integration
-* Improved retrieval
-* Full-paper processing
-* Better ranking algorithms
-* More advanced agent planning
-* Persistent research history
-* Authentication
-* User accounts
-* Scalable infrastructure
-* Custom domain
-* Monitoring and logging
-
-The intended progression is:
-
-```text
-Local Research Assistant
-        |
-        v
-Dockerized Application
-        |
-        v
-Cloud LLM Infrastructure
-        |
-        v
-Public Deployment
-        |
-        v
-Scalable AI Research Platform
-```
-
----
+-Cloud-based LLM deployment
+-Public production deployment
+-Additional academic sources such as PubMed
+-Improved paper-ranking methods
+-More advanced document-level RAG
+-Persistent research memory
+-Streaming research progress
+-Faster research generation
+-Improved research-gap analysis
+-More advanced autonomous planning
 
 ## Project Status
 
