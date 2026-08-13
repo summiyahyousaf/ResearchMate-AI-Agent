@@ -2,7 +2,7 @@
 
 > An autonomous AI research assistant that discovers academic papers, ranks relevant research, retrieves relevant information using Retrieval-Augmented Generation (RAG), identifies potential research gaps, generates citations, and produces downloadable research reports.
 
-![ResearchMate AI Agent Banner](assets/researchmate-screenshots/banner123.png)
+![ResearchMate AI Agent Banner](screenshots/banner123.png)
 
 ---
 
