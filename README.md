@@ -460,7 +460,6 @@ The Flask-powered interface allows users to:
 
 ## Screenshots
 
-Screenshots will be added here to demonstrate the ResearchMate interface and generated results.
 
 ### ResearchMate Interface
 
