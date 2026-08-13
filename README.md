@@ -138,110 +138,13 @@ The system is designed to:
 
 ## How ResearchMate Works
 
-ResearchMate uses a state-driven workflow to coordinate the research process.
-
-```text
-                    +---------------------+
-                    |   Research Topic    |
-                    +----------+----------+
-                               |
-                               v
-                    +---------------------+
-                    |      Planner        |
-                    +----------+----------+
-                               |
-                               v
-                    +---------------------+
-                    |   Search Papers     |
-                    +----------+----------+
-                               |
-                               v
-                    +---------------------+
-                    |    Rank Papers      |
-                    +----------+----------+
-                               |
-                               v
-                    +---------------------+
-                    |   RAG Retrieval     |
-                    +----------+----------+
-                               |
-                               v
-                    +---------------------+
-                    |  Generate Report    |
-                    +----------+----------+
-                               |
-                               v
-                    +---------------------+
-                    |   Research Gaps     |
-                    +----------+----------+
-                               |
-                               v
-                    +---------------------+
-                    |     Citations       |
-                    +----------+----------+
-                               |
-                               v
-                    +---------------------+
-                    |     PDF Report      |
-                    +---------------------+
-```
-
-The planner checks the current research state and determines which stage should happen next.
+<img src="screenshots/work.png" width="600">
 
 ---
 
 ## System Architecture
 
-```text
-                         +----------------------+
-                         |     Web Interface    |
-                         |      HTML/CSS/JS     |
-                         +----------+-----------+
-                                    |
-                                    v
-                         +----------------------+
-                         |      Flask API       |
-                         |    flask_app.py      |
-                         +----------+-----------+
-                                    |
-                                    v
-                         +----------------------+
-                         |    Agent Workflow    |
-                         | Planner + State      |
-                         | Memory + Workflow    |
-                         +----------+-----------+
-                                    |
-              +---------------------+---------------------+
-              |                     |                     |
-              v                     v                     v
-       Search Services        Ranking Service        RAG System
-              |                     |                     |
-              v                     v                     v
-     arXiv / Semantic       Relevance +            Embeddings
-        Scholar              Citations             FAISS
-              |                     |                     |
-              +---------------------+---------------------+
-                                    |
-                                    v
-                         +----------------------+
-                         |    LLM Processing    |
-                         |       Ollama         |
-                         +----------+-----------+
-                                    |
-                    +---------------+---------------+
-                    |                               |
-                    v                               v
-             Research Report                  Research Gaps
-                    |                               |
-                    +---------------+---------------+
-                                    |
-                                    v
-                         +----------------------+
-                         | Citations + PDF       |
-                         +----------------------+
-```
-
----
+<img src="screenshots/architecture.png" width="600">
 
 ## Research Workflow
 
