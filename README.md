@@ -464,51 +464,25 @@ Screenshots will be added here to demonstrate the ResearchMate interface and gen
 
 ### ResearchMate Interface
 
-```text
-<!-- Add screenshot here -->
-```
 
-![ResearchMate Interface](screenshots/interface.png)
+<img src="screenshots/interface.png" width="900">
 
-### Research Input
+### Research 
 
-```text
-<!-- Add screenshot here -->
-```
-
-![Research Input](screenshots/search.png)
+<img src="screenshots/search.png" width="900">
 
 ### Generated Research Report
 
-```text
-<!-- Add screenshot here -->
-```
-
-![Generated Research Report](assets/screenshots/research-report.png)
+<img src="screenshots/research_report.png" width="900">
 
 ### Research Gaps
 
-```text
-<!-- Add screenshot here -->
-```
 
-![Research Gaps](assets/screenshots/research-gaps.png)
+<img src="screenshots/gaps.png" width="900">
 
-### Citations
-
-```text
-<!-- Add screenshot here -->
-```
-
-![Citations](assets/screenshots/citations.png)
 
 ### Generated PDF
-
-```text
-<!-- Add screenshot here -->
-```
-
-![Generated PDF](assets/screenshots/generated-pdf.png)
+<img src="screenshots/pdf.png" width="900">
 
 ---
 
