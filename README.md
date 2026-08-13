@@ -465,24 +465,24 @@ Screenshots will be added here to demonstrate the ResearchMate interface and gen
 ### ResearchMate Interface
 
 
-<img src="screenshots/interface.png" width="900">
+<img src="screenshots/interface.png" width="600">
 
 ### Research 
 
-<img src="screenshots/search.png" width="900">
+<img src="screenshots/search.png" width="600">
 
 ### Generated Research Report
 
-<img src="screenshots/research_report.png" width="900">
+<img src="screenshots/report.png" width="600">
 
 ### Research Gaps
 
 
-<img src="screenshots/gaps.png" width="900">
+<img src="screenshots/gaps.png" width="600">
 
 
 ### Generated PDF
-<img src="screenshots/pdf.png" width="900">
+<img src="screenshots/pdf.png" width="600">
 
 ---
 
