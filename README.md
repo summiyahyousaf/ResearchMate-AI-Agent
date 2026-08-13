@@ -734,7 +734,7 @@ Planned improvements include:
 
 ---
 
-# ⚠️ Limitations
+# Limitations
 
 ResearchMate is currently a project under active development.
 
@@ -758,7 +758,7 @@ https://github.com/summiyahyousaf
 
 ---
 
-# ⭐ Project Status
+#  Project Status
 
 **ResearchMate AI Agent is actively under development.**
 
