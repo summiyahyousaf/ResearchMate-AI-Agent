@@ -136,9 +136,8 @@ The system is designed to:
 
 ---
 
-## How ResearchMate Works
 
-<img src="screenshots/work.png" width="600">
+<img src="screenshots/work.png" width="400">
 
 ---
 
