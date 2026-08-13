@@ -708,27 +708,27 @@ Rather than building another simple chatbot, ResearchMate explores how multiple 
 
 ## Limitations
 
--Research generation can take several minutes depending on the number of papers and LLM processing time.
--The current Docker setup relies on Ollama running on the host machine.
--The current deployment is intended for local development and demonstration.
--Research results depend on the availability, response time, and limits of external academic APIs.
--Public deployment requires a cloud-based LLM hosting solution.
+- Research generation can take several minutes depending on the number of papers and LLM processing time.
+- The current Docker setup relies on Ollama running on the host machine.
+- The current deployment is intended for local development and demonstration.
+- Research results depend on the availability, response time, and limits of external academic APIs.
+- Public deployment requires a cloud-based LLM hosting solution.
 
 ---
 
 ## Future Improvements
 
 
--Cloud-based LLM deployment
--Public production deployment
--Additional academic sources such as PubMed
--Improved paper-ranking methods
--More advanced document-level RAG
--Persistent research memory
--Streaming research progress
--Faster research generation
--Improved research-gap analysis
--More advanced autonomous planning
+- Cloud-based LLM deployment
+- Public production deployment
+- Additional academic sources such as PubMed
+- Improved paper-ranking methods
+- More advanced document-level RAG
+- Persistent research memory
+- Streaming research progress
+- Faster research generation
+- Improved research-gap analysis
+- More advanced autonomous planning
 
 ## Project Status
 
