@@ -137,7 +137,7 @@ The system is designed to:
 ---
 
 
-<img src="screenshots/work.png" width="400">
+<img src="screenshots/workflow.png" width="400">
 
 ## Research Workflow
 
@@ -598,17 +598,6 @@ Windows Host
 ```
 
 The Dockerized ResearchMate application communicates with the locally running Ollama service through the Docker host.
-
-### Docker Status
-
-```text
-Dockerfile                  Completed
-Docker Image                Completed
-Docker Container            Completed
-Local Flask Application     Completed
-Ollama Integration          Completed
-Public Cloud Deployment     Planned
-```
 
 ---
 
