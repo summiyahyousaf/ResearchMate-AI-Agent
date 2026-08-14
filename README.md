@@ -1,4 +1,4 @@
-#  ResearchMate AI Agent
+# 🔬 ResearchMate AI Agent
 
 
 ![ResearchMate AI Agent Banner](screenshots/p123.png)
@@ -6,7 +6,7 @@
 ![Python](https://img.shields.io/badge/Python-3.14-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-Web%20Framework-000000?style=for-the-badge&logo=flask&logoColor=white)
 ![RAG](https://img.shields.io/badge/RAG-FAISS-555555?style=for-the-badge)
-![Ollama](https://img.shields.io/badge/Ollama-Llama%203.2-000000?style=for-the-badge)
+![Ollama](https://img.shields.io/badge/Ollama-Llama%203.2%201B-000000?style=for-the-badge)
 ![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-555555?style=for-the-badge)
 ---
@@ -14,9 +14,9 @@
 ## Table of Contents
 
 * [Overview](#overview)
-* [Purpose](#purpose)
 * [Objective](#objective)
 * [Key Features](#key-features)
+* [Architecture](#architecture) 
 * [Workflow](#workflow)
 * [RAG Pipeline](#rag-pipeline)
 * [LLM Integration](#llm-integration)
@@ -44,28 +44,7 @@
 
 ResearchMate AI Agent is an AI-powered research assistant designed to automate and simplify the academic research workflow. Instead of manually searching for papers, comparing research, retrieving relevant information, identifying research gaps, formatting citations, and preparing reports, ResearchMate coordinates these tasks through a structured research pipeline.
 
-It discovers academic papers, ranks relevant research, retrieves useful information using Retrieval-Augmented Generation (RAG), identifies potential research gaps, generates citations, and produces downloadable research reports.
 
-The project combines AI agent workflows, LLMs, RAG, vector search, academic APIs, paper ranking, citation generation, Flask, and Docker into a single end-to-end research workflow.
----
-
-## Purpose
-
-Academic research often involves repetitive and time-consuming tasks such as:
-
-* Finding relevant research papers
-* Comparing different sources
-* Extracting useful information
-* Identifying important findings
-* Discovering potential research gaps
-* Formatting citations
-* Organizing research into a structured report
-
-ResearchMate is created to explore how an AI-powered system can coordinate these tasks into one automated workflow.
-
-The project focuses on building a research assistant that goes beyond simple question answering by combining multiple research and AI components.
-
----
 
 ## Objective
 
@@ -101,6 +80,11 @@ The system is designed to:
 | Web Interface                  | Provides a browser-based research interface                |
 | Docker Support                 | Containerizes the application for reproducible execution   |
 
+---
+## Architecture
+<img src="screenshots/architecture.png" width="400">
+
+
 
 ---
 ## Workflow
@@ -117,7 +101,7 @@ The system is designed to:
 
 ## LLM Integration
 
-ResearchMate uses Ollama for local LLM inference during development and local Docker execution.The current Docker setup depends on Ollama running on the local host machine.
+ResearchMate uses Ollama for local LLM inference during development and local Docker execution. The current Docker setup communicates with the Ollama service running on the host machine.
 
 Current model:
 
@@ -554,5 +538,4 @@ Air University Islamabad
 This project is licensed under the MIT License.
 
 
-⭐ If you found this project interesting, consider giving it a star!
 
