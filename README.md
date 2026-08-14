@@ -571,51 +571,6 @@ Never commit real API keys to the repository.
 
 ---
 
-## Example Research Workflow
-
-Example input:
-
-```text
-Generative AI in healthcare
-```
-
-ResearchMate processes the request through:
-
-```text
-User Input
-    |
-    v
-Academic Search
-    |
-    v
-Relevant Papers
-    |
-    v
-Paper Ranking
-    |
-    v
-RAG Retrieval
-    |
-    v
-LLM Research Analysis
-    |
-    v
-Research Gap Detection
-    |
-    v
-Citation Generation
-    |
-    v
-Structured Report
-    |
-    v
-PDF Generation
-```
-
-The user receives structured research output together with citations and a downloadable report.
-
----
-
 ## Project Goals
 
 ResearchMate was developed as a practical exploration of how AI systems can coordinate multiple tools and services to accomplish a larger research task.
@@ -670,33 +625,6 @@ Rather than building another simple chatbot, ResearchMate explores how multiple 
 - Improved research-gap analysis
 - More advanced autonomous planning
 
-## Project Status
-
-ResearchMate AI Agent is actively under development.
-
-The current version demonstrates an end-to-end research workflow:
-
-```text
-SEARCH
-  |
-RANK
-  |
-RETRIEVE
-  |
-ANALYZE
-  |
-FIND GAPS
-  |
-CITATIONS
-  |
-REPORT
-  |
-PDF
-```
-
-The project currently runs locally and has been successfully containerized using Docker.
-
-Public cloud deployment is planned for a future stage after further development and testing.
 
 ##  Developer
 
