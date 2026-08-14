@@ -173,14 +173,6 @@ The search service combines available results from the integrated academic sourc
 
 After collecting research papers, ResearchMate processes and ranks them using available research relevance and citation information.
 
-The ranking logic is separated into:
-
-```text
-services/ranking_service.py
-```
-
-This modular design allows the ranking strategy to be improved independently from the search system.
-
 ---
 
 ## Research Gap Identification
@@ -220,7 +212,6 @@ ResearchMate generates downloadable research reports using ReportLab.
 A generated report can contain:
 
 * Research topic
-* Executive summary
 * Research overview
 * Main findings
 * Paper comparison
@@ -361,10 +352,10 @@ ResearchMate-AI-Agent/
 
 ## Installation
 
-Clone the repository:
+### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/summiyahyousaf/ResearchMate-AI-Agent
 ```
 
 Move into the project directory:
@@ -373,23 +364,97 @@ Move into the project directory:
 cd ResearchMate-AI-Agent
 ```
 
-Create a virtual environment:
+### 2. Create a Virtual Environment
+
+Creating a virtual environment keeps the project's Python dependencies isolated from other Python projects.
 
 ```bash
 python -m venv venv
 ```
 
-Activate the virtual environment on Windows:
+### 3. Activate the Virtual Environment
+
+On Windows PowerShell:
 
 ```powershell
 venv\Scripts\Activate.ps1
 ```
 
-Install the required dependencies:
+If PowerShell blocks the activation script, run:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+Then activate the environment again:
+
+```powershell
+venv\Scripts\Activate.ps1
+```
+
+### 4. Install Dependencies
+
+Install the required Python packages:
 
 ```powershell
 pip install -r requirements.txt
 ```
+
+### 5. Configure Environment Variables
+
+Create a `.env` file in the project root:
+
+```env
+SEMANTIC_SCHOLAR_API_KEY=your_api_key
+```
+
+### 6. Install and Run Ollama
+
+ResearchMate currently uses Ollama as its local LLM runtime.
+
+Make sure Ollama is installed and running on your system.
+
+Check that Ollama is available:
+
+```powershell
+ollama --version
+```
+
+Check the available models:
+
+```powershell
+ollama list
+```
+
+If the required model is not available, pull it with:
+
+```powershell
+ollama pull llama3.2
+```
+
+You can also start the model with:
+
+```powershell
+ollama run llama3.2
+```
+
+Keep Ollama running while using ResearchMate.
+
+### 7. Run the Flask Application
+
+Start ResearchMate:
+
+```powershell
+python flask_app.py
+```
+
+The application will run at:
+
+```text
+http://localhost:5000
+```
+
+Open the URL in your browser to access the ResearchMate interface.
 
 ---
 
