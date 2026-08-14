@@ -47,35 +47,6 @@ ResearchMate AI Agent is an AI-powered research assistant designed to automate a
 
 Instead of manually searching for papers, comparing research, retrieving relevant information, identifying research gaps, formatting citations, and preparing reports, ResearchMate coordinates these tasks through a structured research pipeline.
 
-### ResearchMate Workflow
-
-```text
-Research Topic
-      |
-      v
-Academic Paper Search
-      |
-      v
-Paper Ranking
-      |
-      v
-RAG Retrieval
-      |
-      v
-Research Analysis
-      |
-      v
-Research Gap Identification
-      |
-      v
-Citation Generation
-      |
-      v
-Structured Research Report
-      |
-      v
-PDF Generation
-```
 
 The project combines AI agent workflows, LLMs, RAG, vector search, academic APIs, ranking, citation generation, Flask, and Docker into a single research workflow.
 
