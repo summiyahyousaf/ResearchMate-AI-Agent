@@ -1,10 +1,14 @@
 #  ResearchMate AI Agent
 
-> An autonomous AI research assistant that discovers academic papers, ranks relevant research, retrieves relevant information using Retrieval-Augmented Generation (RAG), identifies potential research gaps, generates citations, and produces downloadable research reports.
-
 
 ![ResearchMate AI Agent Banner](screenshots/B123.png)
 
+![Python](https://img.shields.io/badge/Python-3.14-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-Web%20Framework-000000?style=for-the-badge&logo=flask&logoColor=white)
+![RAG](https://img.shields.io/badge/RAG-FAISS-555555?style=for-the-badge)
+![Ollama](https://img.shields.io/badge/Ollama-Llama%203.2-000000?style=for-the-badge)
+![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-555555?style=for-the-badge)
 ---
 
 ## Table of Contents
@@ -28,7 +32,6 @@
 * [Installation](#installation)
 * [Docker](#docker)
 * [Project Goals](#project-goals)
-* [Current Status](#current-status)
 * [Limitations](#limitations)
 * [Future Improvements](#future-improvements)
 * [Developer](#developer)
@@ -39,13 +42,11 @@
 
 ## Overview
 
-ResearchMate AI Agent is an AI-powered research assistant designed to automate and simplify the academic research workflow.
+ResearchMate AI Agent is an AI-powered research assistant designed to automate and simplify the academic research workflow. Instead of manually searching for papers, comparing research, retrieving relevant information, identifying research gaps, formatting citations, and preparing reports, ResearchMate coordinates these tasks through a structured research pipeline.
 
-Instead of manually searching for papers, comparing research, retrieving relevant information, identifying research gaps, formatting citations, and preparing reports, ResearchMate coordinates these tasks through a structured research pipeline.
+It discovers academic papers, ranks relevant research, retrieves useful information using Retrieval-Augmented Generation (RAG), identifies potential research gaps, generates citations, and produces downloadable research reports.
 
-
-The project combines AI agent workflows, LLMs, RAG, vector search, academic APIs, ranking, citation generation, Flask, and Docker into a single research workflow.
-
+The project combines AI agent workflows, LLMs, RAG, vector search, academic APIs, paper ranking, citation generation, Flask, and Docker into a single end-to-end research workflow.
 ---
 
 ## Purpose
