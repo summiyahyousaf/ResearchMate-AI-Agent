@@ -1,7 +1,7 @@
 #  ResearchMate AI Agent
 
 
-![ResearchMate AI Agent Banner](screenshots/B123.png)
+![ResearchMate AI Agent Banner](screenshots/p123.png)
 
 ![Python](https://img.shields.io/badge/Python-3.14-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-Web%20Framework-000000?style=for-the-badge&logo=flask&logoColor=white)
