@@ -64,7 +64,7 @@ Academic research often involves repetitive and time-consuming tasks such as:
 * Formatting citations
 * Organizing research into a structured report
 
-ResearchMate was created to explore how an AI-powered system can coordinate these tasks into one automated workflow.
+ResearchMate is created to explore how an AI-powered system can coordinate these tasks into one automated workflow.
 
 The project focuses on building a research assistant that goes beyond simple question answering by combining multiple research and AI components.
 
@@ -103,7 +103,7 @@ The system is designed to:
 | PDF Generation                 | Creates downloadable research reports                      |
 | Web Interface                  | Provides a browser-based research interface                |
 | Docker Support                 | Containerizes the application for reproducible execution   |
-| Modular Architecture           | Separates agents, services, tools, RAG, and LLM components |
+
 
 ---
 
@@ -114,13 +114,7 @@ The system is designed to:
 
 ---
 
-
-
-<img src="screenshots/architecture.png" width="600">
-
----
-
-<img src="screenshots/rag.png" width="600">
+<img src="screenshots/rag.png" width="400">
 
 
 
