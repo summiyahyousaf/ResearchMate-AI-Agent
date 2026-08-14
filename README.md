@@ -120,7 +120,7 @@ The system is designed to:
 
 ## LLM Integration
 
-ResearchMate currently uses Ollama for local LLM inference during development and local Docker execution.
+ResearchMate uses Ollama for local LLM inference during development and local Docker execution.The current Docker setup depends on Ollama running on the local host machine.
 
 Current model:
 
@@ -145,14 +145,6 @@ Llama 3.2:1b
       v
 Generated Response
 ```
-
-This allows ResearchMate to use a locally running LLM without requiring the model itself to be packaged inside the application container.
-
-### Production Deployment
-
-Public deployment is not currently enabled.
-
-The current Docker setup depends on Ollama running on the local host machine. A future production deployment will require cloud-accessible LLM infrastructure.
 
 ---
 
