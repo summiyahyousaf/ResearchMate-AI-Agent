@@ -4,3 +4,5 @@ arxiv
 numpy
 faiss-cpu
 reportlab
+python-dotenv
+huggingface-hub
