@@ -356,23 +356,14 @@ ResearchMate-AI-Agent/
 
 ```bash
 git clone https://github.com/summiyahyousaf/ResearchMate-AI-Agent
-```
-
-Move into the project directory:
-
-```bash
 cd ResearchMate-AI-Agent
 ```
 
-### 2. Create a Virtual Environment
-
-Creating a virtual environment keeps the project's Python dependencies isolated from other Python projects.
+### 2. Create and Activate a Virtual Environment
 
 ```bash
 python -m venv venv
 ```
-
-### 3. Activate the Virtual Environment
 
 On Windows PowerShell:
 
@@ -380,7 +371,7 @@ On Windows PowerShell:
 venv\Scripts\Activate.ps1
 ```
 
-If PowerShell blocks the activation script, run:
+If PowerShell blocks activation:
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -392,15 +383,13 @@ Then activate the environment again:
 venv\Scripts\Activate.ps1
 ```
 
-### 4. Install Dependencies
-
-Install the required Python packages:
+### 3. Install Dependencies
 
 ```powershell
 pip install -r requirements.txt
 ```
 
-### 5. Configure Environment Variables
+### 4. Configure Environment Variables
 
 Create a `.env` file in the project root:
 
@@ -408,91 +397,38 @@ Create a `.env` file in the project root:
 SEMANTIC_SCHOLAR_API_KEY=your_api_key
 ```
 
-### 6. Install and Run Ollama
+### 5. Set Up Ollama
 
-ResearchMate currently uses Ollama as its local LLM runtime.
+ResearchMate uses Ollama as its local LLM runtime.
 
-Make sure Ollama is installed and running on your system.
-
-Check that Ollama is available:
+Make sure Ollama is installed and running, then check the available models:
 
 ```powershell
 ollama --version
-```
-
-Check the available models:
-
-```powershell
 ollama list
 ```
 
 If the required model is not available, pull it with:
 
 ```powershell
-ollama pull llama3.2
+ollama pull llama3.2:1b
 ```
 
-You can also start the model with:
+You can start the model with:
 
 ```powershell
-ollama run llama3.2
+ollama run llama3.2:1b
 ```
 
-Keep Ollama running while using ResearchMate.
+### 6. Run ResearchMate
 
-### 7. Run the Flask Application
-
-Start ResearchMate:
+Start the Flask application:
 
 ```powershell
 python flask_app.py
 ```
 
-The application will run at:
-
-```text
-http://localhost:5000
-```
-
-Open the URL in your browser to access the ResearchMate interface.
-
----
-
-## Running Locally
-
-Make sure Ollama is installed and running.
-
-Check the Ollama installation:
-
-```powershell
-ollama --version
-```
-
-Check whether the Ollama server is running:
-
-```powershell
-curl http://localhost:11434
-```
-
-Check available models:
-
-```powershell
-ollama list
-```
-
-Make sure the required model is available:
-
-```text
-llama3.2:1b
-```
-
-Start ResearchMate:
-
-```powershell
-python flask_app.py
-```
-
-Open the application in your browser:
+Open the application at:
 
 ```text
 http://127.0.0.1:5000
@@ -502,35 +438,29 @@ http://127.0.0.1:5000
 
 ## Docker
 
-ResearchMate has been successfully Dockerized and tested locally.
+ResearchMate is Dockerized and has been tested locally.
 
-### Build the Docker Image
+### Build the Image
 
 ```powershell
 docker build -t researchmate-ai .
 ```
 
-This creates the Docker image:
+This creates:
 
 ```text
 researchmate-ai:latest
 ```
 
-### Run the Docker Container
+### Run the Container
 
 ```powershell
 docker run -p 5000:5000 researchmate-ai
 ```
 
-The port mapping:
+The `5000:5000` mapping connects port `5000` inside the container to port `5000` on the host.
 
-```text
-5000:5000
-```
-
-maps port `5000` inside the Docker container to port `5000` on the host machine.
-
-The application can then be accessed at:
+Access the application at:
 
 ```text
 http://localhost:5000
@@ -540,19 +470,17 @@ http://localhost:5000
 
 ```text
 Windows Host
-|
-+-- Docker
-|     |
-|     +-- ResearchMate Container
-|             |
-|             +-- Flask Application
-|
-+-- Ollama
-      |
-      +-- Llama 3.2:1b
+│
+├── Docker
+│   └── ResearchMate Container
+│       └── Flask Application
+│
+└── Ollama
+    └── Llama 3.2:1b
 ```
 
-The Dockerized ResearchMate application communicates with the locally running Ollama service through the Docker host.
+The Dockerized Flask application communicates with the locally running Ollama service through the Docker host.
+
 
 ---
 
