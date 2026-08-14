@@ -13,9 +13,7 @@
 * [Purpose](#purpose)
 * [Objective](#objective)
 * [Key Features](#key-features)
-* [How ResearchMate Works](#how-researchmate-works)
-* [System Architecture](#system-architecture)
-* [Research Workflow](#research-workflow)
+* [Workflow](#workflow)
 * [RAG Pipeline](#rag-pipeline)
 * [LLM Integration](#llm-integration)
 * [Academic Sources](#academic-sources)
@@ -28,16 +26,14 @@
 * [Technology Stack](#technology-stack)
 * [Project Structure](#project-structure)
 * [Installation](#installation)
-* [Running Locally](#running-locally)
 * [Docker](#docker)
-* [Environment Variables](#environment-variables)
-* [Example Research Workflow](#example-research-workflow)
 * [Project Goals](#project-goals)
 * [Current Status](#current-status)
 * [Limitations](#limitations)
 * [Future Improvements](#future-improvements)
+* [Developer](#developer)
 * [License](#license)
-* [Author](#author)
+
 
 ---
 
