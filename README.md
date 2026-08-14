@@ -552,25 +552,6 @@ The Dockerized ResearchMate application communicates with the locally running Ol
 
 ---
 
-## Environment Variables
-
-Sensitive API credentials should never be committed to GitHub.
-
-Store required secrets in a local `.env` file.
-
-Example:
-
-```env
-SEMANTIC_SCHOLAR_API_KEY=your_api_key
-HUGGINGFACE_API_KEY=your_api_key
-```
-
-Make sure `.env` is included in `.gitignore`.
-
-Never commit real API keys to the repository.
-
----
-
 ## Project Goals
 
 ResearchMate was developed as a practical exploration of how AI systems can coordinate multiple tools and services to accomplish a larger research task.
@@ -596,7 +577,6 @@ The project focuses on implementing and understanding:
 * Flask APIs
 * Docker
 
-Rather than building another simple chatbot, ResearchMate explores how multiple AI and software components can work together as an end-to-end research assistant.
 
 
 ---
@@ -634,13 +614,6 @@ Bachelor of Science in Artificial Intelligence
 
 Air University Islamabad
 
-### Interests
-
-- Artificial Intelligence
-- Machine Learning
-- Healthcare AI
-- NLP
-- Computer Vision
 
 ### 🔗 Connect with me
 
