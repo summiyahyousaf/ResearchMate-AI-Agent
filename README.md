@@ -110,27 +110,7 @@ The system is designed to:
 
 <img src="screenshots/work.png" width="400">
 
-## Research Workflow
 
-A typical research request follows these stages:
-
-```text
-1. Search
-   |
-2. Rank
-   |
-3. Retrieve relevant research context
-   |
-4. Generate research report
-   |
-5. Identify research gaps
-   |
-6. Generate citations
-   |
-7. Create PDF
-   |
-8. Complete
-```
 
 The workflow maintains the research state throughout the process.
 
