@@ -123,39 +123,9 @@ The workflow maintains the research state throughout the process.
 
 ## RAG Pipeline
 
-ResearchMate uses Retrieval-Augmented Generation to provide the LLM with relevant research information.
+ResearchMate uses Retrieval-Augmented Generation to provide the LLM with relevant research information.The retrieval layer provides relevant information from collected research to the generation process.
 
-```text
-Research Papers
-      |
-      v
-Paper Abstracts
-      |
-      v
-Document Chunks
-      |
-      v
-Embeddings
-      |
-      v
-FAISS Vector Store
-      |
-      v
-Similarity Retrieval
-      |
-      v
-Relevant Context
-      |
-      v
-LLM
-      |
-      v
-Research Analysis
-```
-
-The retrieval layer provides relevant information from collected research to the generation process.
-
-This helps the system ground its generated analysis in the research material retrieved during the workflow.
+<img src="screenshots/rag.png" width="600">
 
 ---
 
@@ -256,21 +226,8 @@ Currently supported citation formats include:
 * APA
 * IEEE
 * MLA
+<img src="screenshots/citation.png" width="600">
 
-```text
-Research Paper
-      |
-      v
-Paper Metadata
-      |
-      v
-Citation Service
-      |
-      +--------+--------+
-      |        |        |
-      v        v        v
-     APA     IEEE      MLA
-```
 
 ---
 
