@@ -137,7 +137,7 @@ The system is designed to:
 ---
 
 
-<img src="screenshots/workflow.png" width="400">
+<img src="screenshots/work.png" width="400">
 
 ## Research Workflow
 
