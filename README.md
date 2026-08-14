@@ -112,14 +112,13 @@ The system is designed to:
 
 
 
-The workflow maintains the research state throughout the process.
-
 ---
 
-## System Architecture
+
 
 <img src="screenshots/architecture.png" width="600">
 
+---
 
 <img src="screenshots/rag.png" width="600">
 
