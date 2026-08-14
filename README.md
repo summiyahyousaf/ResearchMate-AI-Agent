@@ -82,20 +82,20 @@ The system is designed to:
 
 ---
 ## Architecture
-<img src="screenshots/architecture.png" width="400">
+<img src="screenshots/architecture.png" width="600">
 
 
 
 ---
 ## Workflow
 
-<img src="screenshots/work.png" width="400">
+<img src="screenshots/work.png" width="600">
 
 
 
 ---
 ## RAG Pipeline
-<img src="screenshots/rag.png" width="400">
+<img src="screenshots/rag.png" width="600">
 
 
 
