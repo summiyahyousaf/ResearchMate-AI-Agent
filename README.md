@@ -106,14 +106,14 @@ The system is designed to:
 
 
 ---
-
+## Workflow
 
 <img src="screenshots/work.png" width="400">
 
 
 
 ---
-
+## RAG Pipeline
 <img src="screenshots/rag.png" width="400">
 
 
