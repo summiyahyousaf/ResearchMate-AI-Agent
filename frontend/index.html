@@ -1,0 +1,747 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='styles.css') }}">
+
+    <title>ResearchMate AI Agent</title>
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         WELCOME SCREEN
+         ================================================== -->
+
+    <section id="welcome-screen">
+
+        <h1>ResearchMate AI</h1>
+
+        <p>Your AI-powered research assistant.</p>
+
+        <p>
+            Discover papers, analyze research,
+            identify research gaps, generate citations,
+            and create research reports.
+        </p>
+
+        <button onclick="showResearchForm()">
+            Start Research
+        </button>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         RESEARCH SCREEN
+         ================================================== -->
+
+    <section id="research-screen">
+
+        <div class="research-header">
+
+            <p class="eyebrow">
+                RESEARCHMATE AI
+            </p>
+
+            <h2>
+                What do you want to research?
+            </h2>
+
+            <p class="research-description">
+
+                Enter any research topic, question, or idea.
+                ResearchMate will search academic papers,
+                analyze the findings, identify research gaps,
+                generate citations, and create a research report.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="research-input-container">
+
+            <input
+                type="text"
+                id="topic"
+                placeholder="e.g. Generative AI in healthcare..."
+            >
+
+            <button
+                onclick="startResearch()"
+                id="research-button">
+
+                Start Research →
+
+            </button>
+
+        </div>
+
+
+
+        <p class="example-label">
+            Most Researched Topics
+        </p>
+
+
+
+        <div class="topic-examples">
+
+            <button onclick="setTopic('Generative AI in education')">
+                Generative AI in Education
+            </button>
+
+            <button onclick="setTopic('AI for heart disease prediction')">
+                AI for Heart Disease
+            </button>
+
+            <button onclick="setTopic('Large Language Models')">
+                Large Language Models
+            </button>
+
+            <button onclick="setTopic('AI and climate change')">
+                AI & Climate Change
+            </button>
+
+        </div>
+
+
+
+        <!-- Research Pipeline -->
+
+        <div class="research-pipeline">
+
+            <p class="pipeline-title">
+                ResearchMate will
+            </p>
+
+
+            <div class="pipeline">
+
+                <div class="pipeline-item">
+
+                    <span>01</span>
+
+                    <strong>
+                        Find Papers
+                    </strong>
+
+                </div>
+
+
+                <div class="pipeline-item">
+
+                    <span>02</span>
+
+                    <strong>
+                        Rank Research
+                    </strong>
+
+                </div>
+
+
+                <div class="pipeline-item">
+
+                    <span>03</span>
+
+                    <strong>
+                        Analyze
+                    </strong>
+
+                </div>
+
+
+                <div class="pipeline-item">
+
+                    <span>04</span>
+
+                    <strong>
+                        Find Gaps
+                    </strong>
+
+                </div>
+
+
+                <div class="pipeline-item">
+
+                    <span>05</span>
+
+                    <strong>
+                        Citations
+                    </strong>
+
+                </div>
+
+
+                <div class="pipeline-item">
+
+                    <span>06</span>
+
+                    <strong>
+                        PDF Report
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <p id="status-message"></p>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         PROGRESS SCREEN
+         ================================================== -->
+
+    <section id="progress-section">
+
+        <h1>
+            ResearchMate AI
+        </h1>
+
+
+        <h2>
+            Researching your topic...
+        </h2>
+
+
+        <p id="progress-topic"></p>
+
+
+
+        <div class="progress-container">
+
+
+            <div class="progress-step active">
+
+                <span class="step-icon">
+                    ◉
+                </span>
+
+                <span>
+                    Searching academic papers
+                </span>
+
+            </div>
+
+
+
+            <div class="progress-step">
+
+                <span class="step-icon">
+                    ○
+                </span>
+
+                <span>
+                    Ranking relevant research
+                </span>
+
+            </div>
+
+
+
+            <div class="progress-step">
+
+                <span class="step-icon">
+                    ○
+                </span>
+
+                <span>
+                    Analyzing research with RAG
+                </span>
+
+            </div>
+
+
+
+            <div class="progress-step">
+
+                <span class="step-icon">
+                    ○
+                </span>
+
+                <span>
+                    Identifying research gaps
+                </span>
+
+            </div>
+
+
+
+            <div class="progress-step">
+
+                <span class="step-icon">
+                    ○
+                </span>
+
+                <span>
+                    Generating citations
+                </span>
+
+            </div>
+
+
+
+            <div class="progress-step">
+
+                <span class="step-icon">
+                    ○
+                </span>
+
+                <span>
+                    Preparing your research report
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <p class="progress-note">
+
+            ResearchMate is analyzing multiple sources.
+            This may take a few minutes.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         RESULTS SCREEN
+         ================================================== -->
+
+    <section id="results-section">
+
+        <h1>
+            Research Completed 
+        </h1>
+
+
+        <p id="result-topic"></p>
+
+
+
+        <!-- Research Report -->
+
+        <h2>
+            Research Report
+        </h2>
+
+        <div id="report"></div>
+
+
+
+        <!-- Research Gaps -->
+
+        <h2>
+            Research Gaps
+        </h2>
+
+        <div id="research-gaps"></div>
+
+
+
+        <!-- Citations -->
+
+        <h2>
+            Citations
+        </h2>
+
+        <div id="citations"></div>
+
+
+
+        <!-- PDF -->
+
+        <button id="pdf-button">
+            Download PDF
+        </button>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+         ================================================== -->
+
+    <script>
+
+
+        /* --------------------------------------------------
+           Show Research Form
+           -------------------------------------------------- */
+
+        function showResearchForm() {
+
+            document.getElementById("welcome-screen").style.display =
+                "none";
+
+            document.getElementById("research-screen").style.display =
+                "block";
+
+        }
+
+
+
+        /* --------------------------------------------------
+           Set Example Topic
+           -------------------------------------------------- */
+
+        function setTopic(topic) {
+
+            document.getElementById("topic").value =
+                topic;
+
+        }
+
+
+
+        /* --------------------------------------------------
+           Start Research
+           -------------------------------------------------- */
+
+        async function startResearch() {
+
+
+            const topic =
+                document.getElementById("topic").value.trim();
+
+
+
+            /* Validate topic */
+
+            if (!topic) {
+
+                alert(
+                    "Please enter a research topic."
+                );
+
+                return;
+
+            }
+
+
+
+            /* --------------------------------------------------
+               Show progress screen IMMEDIATELY
+
+               This happens BEFORE fetch() because the backend
+               may take several minutes.
+               -------------------------------------------------- */
+
+            document.getElementById("research-screen").style.display =
+                "none";
+
+
+            document.getElementById("progress-section").style.display =
+                "block";
+
+
+            document.getElementById("progress-topic").innerText =
+                "Topic: " + topic;
+
+
+
+            /* Disable research button */
+
+            document.getElementById("research-button").disabled =
+                true;
+
+
+
+            /* --------------------------------------------------
+               Send topic to Flask
+               -------------------------------------------------- */
+
+            try {
+
+
+                const response =
+                    await fetch("/research", {
+
+                        method: "POST",
+
+                        headers: {
+
+                            "Content-Type":
+                                "application/json"
+
+                        },
+
+                        body: JSON.stringify({
+
+                            topic: topic
+
+                        })
+
+                    });
+
+
+
+                /* Convert Flask response to JSON */
+
+                const data =
+                    await response.json();
+
+
+
+                /* --------------------------------------------------
+                   Handle Flask errors
+                   -------------------------------------------------- */
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        data.error ||
+                        "Research failed."
+                    );
+
+                }
+
+
+
+                /* --------------------------------------------------
+                   Hide progress screen
+                   -------------------------------------------------- */
+
+                document.getElementById(
+                    "progress-section"
+                ).style.display = "none";
+
+
+
+                /* --------------------------------------------------
+                   Show results
+                   -------------------------------------------------- */
+
+                document.getElementById(
+                    "results-section"
+                ).style.display = "block";
+
+
+
+                /* --------------------------------------------------
+                   Display topic
+                   -------------------------------------------------- */
+
+                document.getElementById(
+                    "result-topic"
+                ).innerText =
+                    "Research Topic: " + data.topic;
+
+
+
+                /* --------------------------------------------------
+                   Display Research Report
+                   -------------------------------------------------- */
+
+                const reportContainer =
+                    document.getElementById("report");
+
+
+                reportContainer.innerHTML =
+                    data.report
+
+                        .replace(
+                            /\*\*(.*?)\*\*/g,
+                            "<strong>$1</strong>"
+                        )
+
+                        .replace(
+                            /\n\n/g,
+                            "<br><br>"
+                        )
+
+                        .replace(
+                            /\n/g,
+                            "<br>"
+                        );
+
+
+
+                /* --------------------------------------------------
+                   Display Research Gaps
+                   -------------------------------------------------- */
+
+                document.getElementById(
+                    "research-gaps"
+                ).innerText =
+                    data.research_gaps;
+
+
+
+                /* --------------------------------------------------
+                   Display Citations
+                   -------------------------------------------------- */
+
+                const citationsContainer =
+                    document.getElementById(
+                        "citations"
+                    );
+
+
+                citationsContainer.innerHTML =
+                    "";
+
+
+
+                data.citations.forEach(
+                    (citation, index) => {
+
+
+                        const citationBlock =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        citationBlock.innerHTML = `
+
+                            <h3>
+                                ${index + 1}.
+                                ${citation.title}
+                            </h3>
+
+                            <p>
+
+                                <strong>
+                                    APA:
+                                </strong>
+
+                                <br>
+
+                                ${citation.APA}
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>
+                                    IEEE:
+                                </strong>
+
+                                <br>
+
+                                ${citation.IEEE}
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>
+                                    MLA:
+                                </strong>
+
+                                <br>
+
+                                ${citation.MLA}
+
+                            </p>
+
+
+                            <hr>
+
+                        `;
+
+
+                        citationsContainer.appendChild(
+                            citationBlock
+                        );
+
+                    }
+                );
+
+
+
+            }
+
+            catch (error) {
+
+
+                console.error(
+                    "Research Error:",
+                    error
+                );
+
+
+                /* Hide progress screen */
+
+                document.getElementById(
+                    "progress-section"
+                ).style.display = "none";
+
+
+
+                /* Show research screen again */
+
+                document.getElementById(
+                    "research-screen"
+                ).style.display = "block";
+
+
+
+                /* Enable button again */
+
+                document.getElementById(
+                    "research-button"
+                ).disabled = false;
+
+
+
+                alert(
+                    "Research failed: " +
+                    error.message
+                );
+
+            }
+
+        }
+
+
+
+        /* --------------------------------------------------
+           Download PDF
+           -------------------------------------------------- */
+
+        document.getElementById(
+            "pdf-button"
+        ).onclick = function () {
+
+            window.location.href =
+                "/download.pdf";
+
+        };
+
+
+    </script>
+
+
+</body>
+
+</html>
+```

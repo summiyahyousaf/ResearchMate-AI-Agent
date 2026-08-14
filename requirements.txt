@@ -1,0 +1,6 @@
+Flask
+requests
+arxiv
+numpy
+faiss-cpu
+reportlab
